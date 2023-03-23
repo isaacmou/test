@@ -79,9 +79,8 @@ function addRow(contact) {
 
 
 function addRowWithName(contact) {
-    let nam = input;
     var tcontent = document.getElementById("tcontent");
-    if (contact.name == txt.value){
+    if (contact.name == txt.toString()){
         var row = tcontent.insertRow();
 
         var nameCell = row.insertCell();
