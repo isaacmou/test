@@ -31,8 +31,8 @@ function initialize() {
             },
             false
             );
+    btn1.addEventListerner('click',displayContactsWithName)
 }
-btn1.addEventListerner('click',displayContactsWithName)
 function retrieveContacts() {
     const xhr = new XMLHttpRequest();
     const url = "contacts.json";
