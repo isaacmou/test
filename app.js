@@ -58,8 +58,9 @@ function displayContacts(contacts) {
 }
 
 function addRow(contact) {
+    let nam = input.value;
     var tcontent = document.getElementById("tcontent");
-    if (contact.name == input){
+    if (contact.name == nam){
         var row = tcontent.insertRow();
 
         var nameCell = row.insertCell();
