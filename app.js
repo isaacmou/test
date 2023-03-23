@@ -62,7 +62,9 @@ function addRow(contact) {
 
     var nameCell = row.insertCell();
     nameCell.setAttribute('data-label', "Name");
-    nameCell.innerHTML = contact.name;
+    if (contact.name=="Michael"){
+        nameCell.innerHTML = contact.name;
+    }
 
     var addressCell = row.insertCell();
     addressCell.setAttribute('data-label', "Address");
