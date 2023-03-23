@@ -66,11 +66,15 @@ function addRow(contact) {
         nameCell.innerHTML = contact.name;
     }
 
-    var addressCell = row.insertCell();
+     var addressCell = row.insertCell();
     addressCell.setAttribute('data-label', "Address");
-    addressCell.innerHTML = contact.address;
+    if (contact.name=="Michael"){
+        addressCell.innerHTML = contact.address;
+    }
 
     var mobileCell = row.insertCell();
     mobileCell.setAttribute('data-label', "Mobile");
-    mobileCell.innerHTML = contact.phone.mobile;
+    if (contact.name=="Michael"){
+        mobileCell.innerHTML = contact.phone.mobile;
+    }
 }
