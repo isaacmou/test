@@ -1,5 +1,5 @@
-const txt = document.getElementById('input');
-const btn1 = document.getElementById('searchbutton');
+const txt = document.querySelector("#input");
+const btn1 = document.querySelector("#searchbutton");
 function initialize() {
     var status = "* Offline *";
     if (navigator.onLine) {
@@ -17,7 +17,7 @@ function initialize() {
 
     document.getElementById("status").innerHTML = status;
 
-    document.body.addEventListener(
+    document.body.addEventListener('click',
             "online",
             function () {
                 document.getElementById("status").innerHTML = "Online";
@@ -31,7 +31,9 @@ function initialize() {
             },
             false
             );
-    btn1.addEventListerner('click',displayContactsWithName)
+}
+btn1.onclick = function () {
+    addRowWithName(contact)
 }
 function retrieveContacts() {
     const xhr = new XMLHttpRequest();
@@ -57,6 +59,7 @@ function retrieveContacts() {
 function displayContacts(contacts) {
     contacts.forEach(addRow);
 }
+
 function displayContactsWithName(contacts) {
     contacts.forEach(addRowWithName);
 }
@@ -96,5 +99,4 @@ function addRowWithName(contact) {
         mobileCell.innerHTML = contact.phone.mobile;
     }
 }
-
 
