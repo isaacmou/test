@@ -80,7 +80,7 @@ function addRow(contact) {
 
 function addRowWithName(contact) {
     var tcontent = document.getElementById("tcontent");
-    if (contact.name == txt.toString()){
+    if (contact.name == "Michael"){
         var row = tcontent.insertRow();
 
         var nameCell = row.insertCell();
