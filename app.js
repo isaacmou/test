@@ -58,23 +58,22 @@ function displayContacts(contacts) {
 
 function addRow(contact) {
     var tcontent = document.getElementById("tcontent");
-    var row = tcontent.insertRow();
+    if (contact.name == "Michael"){
+        var row = tcontent.insertRow();
 
-    var nameCell = row.insertCell();
-    nameCell.setAttribute('data-label', "Name");
-    if (contact.name=="Michael"){
+        var nameCell = row.insertCell();
+        nameCell.setAttribute('data-label', "Name");
         nameCell.innerHTML = contact.name;
-    }
 
-     var addressCell = row.insertCell();
-    addressCell.setAttribute('data-label', "Address");
-    if (contact.name=="Michael"){
+        var addressCell = row.insertCell();
+        addressCell.setAttribute('data-label', "Address");
         addressCell.innerHTML = contact.address;
-    }
 
-    var mobileCell = row.insertCell();
-    mobileCell.setAttribute('data-label', "Mobile");
-    if (contact.name=="Michael"){
+        var mobileCell = row.insertCell();
+        mobileCell.setAttribute('data-label', "Mobile");
         mobileCell.innerHTML = contact.phone.mobile;
     }
 }
+
+
+
