@@ -1,4 +1,5 @@
-const input = document.querySelector("#input");
+const txt = document.getElementById('input');
+const btn1 = document.getElementById('searchbutton');
 function initialize() {
     var status = "* Offline *";
     if (navigator.onLine) {
@@ -31,7 +32,7 @@ function initialize() {
             false
             );
 }
-
+btn1.addEventListerner('click',displayContactsWithName)
 function retrieveContacts() {
     const xhr = new XMLHttpRequest();
     const url = "contacts.json";
@@ -56,11 +57,31 @@ function retrieveContacts() {
 function displayContacts(contacts) {
     contacts.forEach(addRow);
 }
-
+function displayContactsWithName(contacts) {
+    contacts.forEach(addRowWithName);
+}
 function addRow(contact) {
+    var tcontent = document.getElementById("tcontent");
+    var row = tcontent.insertRow();
+
+    var nameCell = row.insertCell();
+    nameCell.setAttribute('data-label', "Name");
+    nameCell.innerHTML = contact.name;
+
+    var addressCell = row.insertCell();
+    addressCell.setAttribute('data-label', "Address");
+    addressCell.innerHTML = contact.address;
+
+    var mobileCell = row.insertCell();
+    mobileCell.setAttribute('data-label', "Mobile");
+    mobileCell.innerHTML = contact.phone.mobile;
+}
+
+
+function addRowWithName(contact) {
     let nam = input;
     var tcontent = document.getElementById("tcontent");
-    if (contact.name == nam){
+    if (contact.name == txt.value){
         var row = tcontent.insertRow();
 
         var nameCell = row.insertCell();
@@ -76,6 +97,5 @@ function addRow(contact) {
         mobileCell.innerHTML = contact.phone.mobile;
     }
 }
-
 
 
