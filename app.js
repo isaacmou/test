@@ -1,3 +1,4 @@
+const input = document.querySelector("#input")
 function initialize() {
     var status = "* Offline *";
     if (navigator.onLine) {
@@ -58,7 +59,7 @@ function displayContacts(contacts) {
 
 function addRow(contact) {
     var tcontent = document.getElementById("tcontent");
-    if (contact.name == "Leonardo"){
+    if (contact.name == input){
         var row = tcontent.insertRow();
 
         var nameCell = row.insertCell();
